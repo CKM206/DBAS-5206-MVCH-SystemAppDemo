@@ -1,0 +1,52 @@
+﻿<Window x:Class="DBAS_5206_MVCH_SystemAppDemo.AuthenticationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo"
+        xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        TextElement.Foreground="{StaticResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        Background="{StaticResource PrimaryHueDarkBrush}"
+        mc:Ignorable="d"
+        Title="AuthenticationWindow" Width="1920" Height="1080" WindowState="Maximized">
+    <Grid>
+        <!-- A Card to Hold the Login Form -->
+        <materialDesign:Card Background="{StaticResource MaterialDesignPaper}" materialDesign:ShadowAssist.ShadowDepth="Depth4" Width="500" Height="650" Padding="20" UniformCornerRadius="50">
+            <!-- This StackPanel holds all of the content -->
+            <StackPanel>
+                <!-- StackPanel to hold the Title & Subtitle -->
+                <StackPanel>
+                    <TextBlock TextAlignment="Center" Margin="20" FontSize="35" Style="{StaticResource TitleTextBlockStyle}" Text="Mountain-View Community Hospital" />
+                    <TextBlock TextAlignment="Center" Margin="15" FontSize="25" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Text="Hospital System" />
+                </StackPanel>
+                <!-- StackPanel to hold the Form Text & Inputs -->
+                <StackPanel>
+                    <!-- The Form Title -->
+                    <TextBlock TextAlignment="Left" Margin="15, 40" FontSize="35" 
+                               Style="{DynamicResource MaterialDesignHeadline1TextBlock}" Text="Employee Login" />
+                    <!-- An Error Message, Hidden unless the form is provided incorrect data -->
+                    <TextBlock x:Name="tblkLoginError" Margin="15,0" Foreground="Red" Visibility="Hidden" FontSize="15" Text="Error: Incorrect Login Credentials" 
+                               Style="{StaticResource CaptionTextBlockStyle}"/>
+                    <!-- Get The ID of the Employee-->
+                    <TextBox x:Name="tbEmployeeId" Margin="15,0,15,15" FontSize="18" materialDesign:HintAssist.Hint="Employee ID" ToolTip="Enter your Employee ID Here."
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <!-- Get The Password-->
+                    <PasswordBox x:Name="pbPassword" FontSize="18" Margin="15" materialDesign:HintAssist.Hint="Password" materialDesign:TextFieldAssist.HasClearButton="True" ToolTip="Enter your Password Here." GotFocus="pbPassword_GotFocus"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                </StackPanel>
+                <!-- A submit button for the Form, A click event handles Form logic -->
+                <Button x:Name="btnLogin" Width="400" Height="40" FontSize="18" HorizontalContentAlignment="Center" Margin="20" IsDefault="True" ToolTip="Click here to Login." Click="btnLogin_Click"
+                        Style="{DynamicResource MaterialDesignRaisedAccentButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="LoginVariant" VerticalAlignment="Center"/>
+                        <TextBlock Text=" Login"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>

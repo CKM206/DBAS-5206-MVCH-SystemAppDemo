@@ -20,9 +20,18 @@ namespace DBAS_5206_MVCH_SystemAppDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string EmployeeId { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            PopulateEmployeeInfo();
+        }
+
+
+        private void PopulateEmployeeInfo()
+        {
+            
         }
     }
 }
