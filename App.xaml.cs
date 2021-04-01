@@ -24,15 +24,28 @@ namespace DBAS_5206_MVCH_SystemAppDemo
         {
             try
             {
+                // Declarations
+                bool closeApp = false;  // A boolean to let the App know when to shutdown
+
+                // Loop...
+                do
+                {
                 // Wait for the AuthenticationWindow to close...
                 //-When it does check its DialogResult for True. If it
                 //-returns true the user succesfully Authenticated
-                if (new AuthenticationWindow().ShowDialog() == true)
-                {
-                    // Create a new MainWindow
-                    //-Remember, this will return once the window is closed.
-                    new MainWindow().ShowDialog();
-                }
+                    if (new AuthenticationWindow().ShowDialog() == true)
+                    {
+                        // Create a new MainWindow
+                        //-Remember, this will return once the window is closed.
+                        if (new MainWindow().ShowDialog() == false)
+                            closeApp = true;
+                    
+                    }
+                    else
+                        closeApp = true;
+
+                    // Loop Until closeApp == False
+                } while (!closeApp);
 
             }
             finally

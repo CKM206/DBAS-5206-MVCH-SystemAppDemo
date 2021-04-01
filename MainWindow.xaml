@@ -15,6 +15,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080" WindowState="Maximized">
     <Grid>
+        <!-- Row & Column Definitions -->
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="*"/>
@@ -33,16 +34,31 @@
             </StackPanel>
         </Grid>
         
-        <!--- Grid for Employee Information -->
+        <!--- Grid for Employee & Page Information -->
         <Grid Grid.Row="0" Grid.Column="1" Background="#F5F5F5">
+            <!-- TextBlock for the Page Title-->
             <TextBlock x:Name="tblkPageTitle" Margin="10,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="40" Style="{StaticResource TitleTextBlockStyle}">Home</TextBlock>
-            
+
+            <!-- StackPanel for the Employee Information -->
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Label x:Name="lblName" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Employee: Henry David</Label>
-                
+                <!-- StackPanel for the Employee Name -->
                 <StackPanel Orientation="Horizontal">
-                    <Label x:Name="lblPosition" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Position: Clerk</Label>
-                    <Button x:Name="btnSignOut" Margin="5" Style="{StaticResource MaterialDesignFlatDarkBgButton}">Sign Out</Button>
+                    <!-- Label for Employee Heading -->
+                    <Label x:Name="lblEmployee" Margin="0,0,0,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Employee: </Label>
+                    <!-- Label for Logged in Employees Name -->
+                    <Label x:Name="lblEmployeeName" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Henry David</Label>
+                </StackPanel>
+                <!-- StackPanel for the Employee Position -->
+                <StackPanel Orientation="Horizontal">
+                    <!-- Label for Position Heading -->
+                    <Label x:Name="lblPosition" Margin="0,0,0,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Position: </Label>
+                    <!-- Label for Logged in Employees Position -->
+                    <Label x:Name="lblEmployeePosition" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Clerk</Label>
+                    <!-- Sign-Out Button -->
+                    <Button x:Name="btnSignOut" Margin="5" Click="btnSignOut_Click"
+                            Style="{StaticResource MaterialDesignFlatDarkBgButton}">
+                        Sign Out
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
@@ -52,21 +68,26 @@
             <!-- StackPanel for all Menu Elements -->
             <StackPanel>
                 <!-- ListView to Hold the different Controls that are accessible from this Menu-->
-                <ListView x:Name="lvMenuOptions" FontSize="20" Foreground="White">
+                <ListView x:Name="lvMenuOptions" FontSize="20" Foreground="White" SelectionChanged="lvMenuOptions_SelectionChanged">
 
                     <!-- Home Option -->
                     <ListViewItem x:Name="lviHome" Padding="-30,1,1,1" FontSize="25" HorizontalContentAlignment="Stretch">
+                        <!-- StackPanel for the Items Icon & Text -->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" Margin="15" />
                             <TextBlock Text="Home" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
+                    <!-- Heading, even though this is a ListViewItem, it is disabled and acts as a heading for
+                         the ListViewItems beneath it
+                    -->
                     <ListViewItem Focusable="False" IsEnabled="False">
                         <TextBlock Style="{StaticResource MaterialDesignHeadline1TextBlock}" FontSize="25" >Reports</TextBlock>
                     </ListViewItem>
                     
                     <!-- This Option brings up the PhysicianPatientReport Control-->
                     <ListViewItem x:Name="lviPhysicianPatientReport" Padding="1">
+                        <!-- StackPanel for the Items Icon & Text -->
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="FileReport"  Margin="15" />
                             <TextBlock Text="Physician-Patient Report" VerticalAlignment="Center"/>
@@ -75,6 +96,7 @@
 
                     <!-- This Option brings up the RoomUtilizationReport Control-->
                     <ListViewItem x:Name="lviRoomUtilizationReport" Padding="1">
+                        <!-- StackPanel for the Items Icon & Text -->
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BedOutline" Margin="15" />
                             <TextBlock Text="Room Utilization Report" VerticalAlignment="Center"/>
@@ -87,7 +109,7 @@
 
         <!--- Grid for Content -->
         <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource MaterialDesignPaper}">
-
+            <ContentControl x:Name="contentPanel" />
         </Grid>
 
     </Grid>

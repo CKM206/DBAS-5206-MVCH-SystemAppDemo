@@ -6,13 +6,14 @@
              xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
              Startup="Application_Startup"
              ShutdownMode="OnExplicitShutdown">
+             <!--- StartupUri="MainWindow.xaml"> -->
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- Material Design Elements -->
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="DeepOrange" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-
+                
                 <!--  FluentWPF Controls  -->
                 <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -20,3 +21,5 @@
        
     </Application.Resources>
 </Application>
+    
+    
