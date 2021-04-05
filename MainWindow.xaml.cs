@@ -27,6 +27,9 @@ namespace DBAS_5206_MVCH_SystemAppDemo
         public MainWindow()
         {
             InitializeComponent();
+            // Set the ContentPanel's Content to the Control
+            Control homeControl = new HomeControl();
+            this.contentPanel.Content = homeControl;
             PopulateEmployeeInfo();
         }
         private void btnSignOut_Click(object sender, RoutedEventArgs e)
@@ -59,8 +62,8 @@ namespace DBAS_5206_MVCH_SystemAppDemo
                     tblkPageTitle.Text = "Physician Patient Report";
 
                     // Set the ContentPanel's Content to the Control
-                    Control physicianPatientReportControl = new PhysicianPatientReportControl();
-                    this.contentPanel.Content = physicianPatientReportControl;
+                    Control viewEmployees = new ViewEmployees();
+                    this.contentPanel.Content = viewEmployees;
                 }
                 else if (listView.SelectedItem.Equals(lviRoomUtilizationReport))
                 {

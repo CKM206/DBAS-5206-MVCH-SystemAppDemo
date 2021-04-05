@@ -16,14 +16,14 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport2 : ReportClass {
+    public class CrystalReport3 : ReportClass {
         
-        public CrystalReport2() {
+        public CrystalReport3() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport2.rpt";
+                return "CrystalReport3.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Reports {
         
         public override string FullResourceName {
             get {
-                return "DBAS_5206_MVCH_SystemAppDemo.Reports.CrystalReport2.rpt";
+                return "DBAS_5206_MVCH_SystemAppDemo.Reports.CrystalReport3.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport2 : Component, ICachedReport {
+    public class CachedCrystalReport3 : Component, ICachedReport {
         
-        public CachedCrystalReport2() {
+        public CachedCrystalReport3() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport2 rpt = new CrystalReport2();
+            CrystalReport3 rpt = new CrystalReport3();
             rpt.Site = this.Site;
             return rpt;
         }

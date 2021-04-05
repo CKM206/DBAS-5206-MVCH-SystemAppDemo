@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace DBAS_5206_MVCH_SystemAppDemo
 {
@@ -25,6 +26,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo
         public AuthenticationWindow()
         {
             InitializeComponent();
+            
         }
 
     #region Event Handlers
@@ -43,6 +45,8 @@ namespace DBAS_5206_MVCH_SystemAppDemo
             // Declarations
             const string validID = "100745125";         // A Valid EmployeeId
             const string validPassword = "password";    // A Valid Password
+
+            
 
             // Check if data in the form matches the defined valid Id and Password
             //-If it does...

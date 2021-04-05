@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
-using DBAS_5206_MVCH_SystemAppDemo.Reports;
+//using DBAS_5206_MVCH_SystemAppDemo.Reports;
 
 namespace DBAS_5206_MVCH_SystemAppDemo.Controls
 {
@@ -30,7 +30,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Controls
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            ReportDocument report = new CrystalReport2();
+            /*ReportDocument report = new CrystalReport2();
 
 
             crystalReportsViewer1.ViewerCore.ReportSource = report;
@@ -38,7 +38,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Controls
             crystalReportsViewer1.ToggleSidePanel = SAPBusinessObjects.WPF.Viewer.Constants.SidePanelKind.None;
             crystalReportsViewer1.ShowLogo = false;
             crystalReportsViewer1.ShowToggleSidePanelButton = false;
-            crystalReportsViewer1.ShowRefreshButton = true;
+            crystalReportsViewer1.ShowRefreshButton = true;*/
         }
     }
 }

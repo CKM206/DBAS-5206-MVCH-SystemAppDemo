@@ -53,7 +53,7 @@
                     <!-- Label for Position Heading -->
                     <Label x:Name="lblPosition" Margin="0,0,0,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Position: </Label>
                     <!-- Label for Logged in Employees Position -->
-                    <Label x:Name="lblEmployeePosition" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Clerk</Label>
+                    <Label x:Name="lblEmployeePosition" Margin="0,0,30,0" FontSize="20" Style="{StaticResource MaterialDesignLabel}">Manager</Label>
                     <!-- Sign-Out Button -->
                     <Button x:Name="btnSignOut" Margin="5" Click="btnSignOut_Click"
                             Style="{StaticResource MaterialDesignFlatDarkBgButton}">
