@@ -24,6 +24,8 @@ namespace DBAS_5206_MVCH_SystemAppDemo
     {
         public static string EmployeeId { get; set; }
 
+        private static string position;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -62,8 +64,8 @@ namespace DBAS_5206_MVCH_SystemAppDemo
                     tblkPageTitle.Text = "Physician Patient Report";
 
                     // Set the ContentPanel's Content to the Control
-                    Control viewEmployees = new ViewEmployees();
-                    this.contentPanel.Content = viewEmployees;
+                    Control physicianPatientReportControl = new PhysicianPatientReportControl();
+                    this.contentPanel.Content = physicianPatientReportControl;
                 }
                 else if (listView.SelectedItem.Equals(lviRoomUtilizationReport))
                 {
@@ -81,7 +83,20 @@ namespace DBAS_5206_MVCH_SystemAppDemo
 
         private void PopulateEmployeeInfo()
         {
-            
+            // Find out which User is logged in
+            if (int.Parse(EmployeeId) == 3)
+            {
+                lblEmployeeName.Content = "Xulia, Mahir";
+                position = "Clerk";
+                lblEmployeePosition.Content = position;
+            }
+            else
+            {
+                lblEmployeeName.Content = "Ms. Baker";
+                position = "Hospital Administrator";
+                lblEmployeePosition.Content = position;
+
+            }
         }
 
     }

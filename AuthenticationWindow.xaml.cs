@@ -44,13 +44,14 @@ namespace DBAS_5206_MVCH_SystemAppDemo
         {
             // Declarations
             const string validID = "100745125";         // A Valid EmployeeId
+            const string validID2 = "3";
             const string validPassword = "password";    // A Valid Password
 
             
 
             // Check if data in the form matches the defined valid Id and Password
             //-If it does...
-            if (tbEmployeeId.Text == validID && pbPassword.Password == validPassword)
+            if ((tbEmployeeId.Text == validID || tbEmployeeId.Text == validID2) && pbPassword.Password == validPassword)
             {
                 // Hide the Login Error.
                 tblkLoginError.Visibility = Visibility.Hidden;

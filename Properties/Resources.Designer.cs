@@ -61,7 +61,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;E:\Durham College\Year 2 - Semester 2\Classes\Database Development I DBAS-5206\Projects &amp; Case Study\Main Project\DBAS-5206-MVCH-SystemAppDemo\MVCH_DB.mdf&quot;;Integrated Security=True;Connect Timeout=30.
+        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=MVCH_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
         /// </summary>
         internal static string connectionString {
             get {

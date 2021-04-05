@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
-//using DBAS_5206_MVCH_SystemAppDemo.Reports;
+using DBAS_5206_MVCH_SystemAppDemo.Reports;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -28,14 +28,14 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Controls
         public RoomUtilizationControl()
         {
             InitializeComponent();
-            FillDataGrid();
+        
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
 
-            /*ReportDocument report = new CrystalReport1();
+            ReportDocument report = new RoomUtilizationReport();
 
 
             crystalReportsViewer1.ViewerCore.ReportSource = report;
@@ -43,38 +43,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo.Controls
             crystalReportsViewer1.ToggleSidePanel = SAPBusinessObjects.WPF.Viewer.Constants.SidePanelKind.None;
             crystalReportsViewer1.ShowLogo = false;
             crystalReportsViewer1.ShowToggleSidePanelButton = false;
-            crystalReportsViewer1.ShowRefreshButton = true;*/
-        }
-        private void FillDataGrid()
-        {
-            try
-            {
-
-
-                string cString = Properties.Settings.Default.MVCH_DBConnectionString;
-
-                string query = "Select * FROM viewRoomUtilization;";
-
-                SqlConnection con = new SqlConnection(cString);
-                con.Open();
-
-                SqlCommand command = new SqlCommand(query, con);
-
-                SqlDataAdapter da = new SqlDataAdapter(command);
-
-                DataTable dt = new DataTable("Employees");
-
-                da.Fill(dt);
-
-                con.Close();
-
-                dgRoomUtilizationTable.ItemsSource = dt.DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
+            crystalReportsViewer1.ShowRefreshButton = true;
         }
     }
 }

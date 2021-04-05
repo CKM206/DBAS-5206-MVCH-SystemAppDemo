@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
-             StartupUri="MainWindow.xaml">
+             Startup="Application_Startup"
+             ShutdownMode="OnExplicitShutdown">
 
     <!--- StartupUri="MainWindow.xaml"> -->
     <Application.Resources>
