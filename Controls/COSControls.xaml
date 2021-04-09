@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="DBAS_5206_MVCH_SystemAppDemo.Controls.COSControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="14"
+             xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <!-- Document: COSControls.xaml
+         Authors: Kristopher Hankey, 
+                 Andrew Kuo, 
+                 Calvin May, 
+                 Tom Zielinski
+         Date: 04/09/2021
+         Description: This is a custom control created for the MVCH System App Demo. This control is dynamically
+                      loaded onto the MainWindow.xaml, inside of the 'controlPanel' Grid, depending on the position 
+                      of the User currently logged into the application. This Control will only load if the logged 
+                      in user has a position of Hospital Administrator and will provide access to the functionality need by that 
+                      Position. This Control is empty for now, it's main purpose is to demonstrate the ability to swap data access
+                      depending on position.
+    -->
+    
+    <Grid>
+        <!-- StackPanel for all Menu Elements -->
+        <StackPanel>
+            <!-- ListView to Hold the different Controls that are accessible from this Menu-->
+            <ListView x:Name="lvMenuOptions" FontSize="20" Foreground="White">
+
+                <!-- Home Option -->
+                <ListViewItem x:Name="lviHome" Padding="-30,1,1,1" FontSize="25" HorizontalContentAlignment="Stretch">
+                    <!-- StackPanel for the Items Icon & Text -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" Margin="15" />
+                        <TextBlock Text="Home" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+                <!-- Heading, even though this is a ListViewItem, it is disabled and acts as a heading for
+                         the ListViewItems beneath it
+                -->
+                <ListViewItem Focusable="False" IsEnabled="False">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline1TextBlock}" FontSize="25" >Manage Employees</TextBlock>
+                </ListViewItem>
+
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>

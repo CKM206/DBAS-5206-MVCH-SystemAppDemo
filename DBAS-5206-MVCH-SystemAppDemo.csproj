@@ -96,8 +96,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\ViewEmployees.xaml.cs">
-      <DependentUpon>ViewEmployees.xaml</DependentUpon>
+    <Compile Include="Controls\ClerkControls.xaml.cs">
+      <DependentUpon>ClerkControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\COSControls.xaml.cs">
+      <DependentUpon>COSControls.xaml</DependentUpon>
     </Compile>
     <Compile Include="Reports\PhysicianPatientReport.cs">
       <AutoGen>True</AutoGen>
@@ -113,6 +116,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ClerkControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\COSControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\HomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,10 +133,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\RoomUtilizationControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ViewEmployees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

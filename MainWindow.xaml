@@ -4,8 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo"
-        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
-        xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         FontFamily="{materialDesign:MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -14,6 +12,20 @@
         Background="{StaticResource MaterialDesignPaper}"
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080" WindowState="Maximized">
+
+    <!-- Document: MainWindow.xaml
+         Authors: Kristopher Hankey, 
+                  Andrew Kuo, 
+                  Calvin May, 
+                  Tom Zielinski
+         Date: 04/09/2021
+         Description: This is the Main Window. This Window is only loaded once a User has been Authenticated. Most
+                      of the content in this Window is dynamically loaded based on what user has logged in. The window
+                      is split up into several areas of concern using Grid Definitions. There is a title section, an
+                      employee info section, a Menu section and a Content Section. Each of these sections load different
+                      content dependant on the User position.
+                      
+    -->
     <Grid>
         <!-- Row & Column Definitions -->
         <Grid.RowDefinitions>
@@ -37,7 +49,7 @@
         <!--- Grid for Employee & Page Information -->
         <Grid Grid.Row="0" Grid.Column="1" Background="#F5F5F5">
             <!-- TextBlock for the Page Title-->
-            <TextBlock x:Name="tblkPageTitle" Margin="10,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="40" Style="{StaticResource TitleTextBlockStyle}">Home</TextBlock>
+            <TextBlock x:Name="tblkPageTitle" Margin="10,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="40" Style="{StaticResource TitleTextBlockStyle}" Text="Home"/>
 
             <!-- StackPanel for the Employee Information -->
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
@@ -63,53 +75,14 @@
             </StackPanel>
         </Grid>
 
-        <!--- Grid for Menu -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="#1A2C38" >
-            <!-- StackPanel for all Menu Elements -->
-            <StackPanel>
-                <!-- ListView to Hold the different Controls that are accessible from this Menu-->
-                <ListView x:Name="lvMenuOptions" FontSize="20" Foreground="White" SelectionChanged="lvMenuOptions_SelectionChanged">
-
-                    <!-- Home Option -->
-                    <ListViewItem x:Name="lviHome" Padding="-30,1,1,1" FontSize="25" HorizontalContentAlignment="Stretch">
-                        <!-- StackPanel for the Items Icon & Text -->
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" Margin="15" />
-                            <TextBlock Text="Home" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <!-- Heading, even though this is a ListViewItem, it is disabled and acts as a heading for
-                         the ListViewItems beneath it
-                    -->
-                    <ListViewItem Focusable="False" IsEnabled="False">
-                        <TextBlock Style="{StaticResource MaterialDesignHeadline1TextBlock}" FontSize="25" >Reports</TextBlock>
-                    </ListViewItem>
-                    
-                    <!-- This Option brings up the PhysicianPatientReport Control-->
-                    <ListViewItem x:Name="lviPhysicianPatientReport" Padding="1">
-                        <!-- StackPanel for the Items Icon & Text -->
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="FileReport"  Margin="15" />
-                            <TextBlock Text="Physician-Patient Report" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </ListViewItem>
-
-                    <!-- This Option brings up the RoomUtilizationReport Control-->
-                    <ListViewItem x:Name="lviRoomUtilizationReport" Padding="1">
-                        <!-- StackPanel for the Items Icon & Text -->
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="BedOutline" Margin="15" />
-                            <TextBlock Text="Room Utilization Report" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </ListViewItem>
-
-                </ListView>
-            </StackPanel>
+        <!--- Grid for Menu: This is empty at first, but will be loaded dynamically -->
+        <Grid Grid.Row="1" Grid.Column="0" Background="#1A2C38" x:Name="controlPanel">
+            
         </Grid>
 
-        <!--- Grid for Content -->
+        <!--- Grid for Content: This is empty at first, but will be loaded dynamically -->
         <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource MaterialDesignPaper}">
-            <ContentControl x:Name="contentPanel" />
+            <ContentControl x:Name="contentPanel"/>
         </Grid>
 
     </Grid>

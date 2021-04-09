@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo"
-        xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         FontFamily="{materialDesign:MaterialDesignFont}"
         TextElement.Foreground="{StaticResource MaterialDesignBody}"
@@ -13,6 +12,17 @@
         Background="{StaticResource PrimaryHueDarkBrush}"
         mc:Ignorable="d"
         Title="AuthenticationWindow" Width="1920" Height="1080" WindowState="Maximized">
+
+    <!-- Document: AuthenticationWindow.xaml
+         Authors: Kristopher Hankey, 
+                  Andrew Kuo, 
+                  Calvin May, 
+                  Tom Zielinski
+         Date: 04/09/2021
+         Description: This is the Authentication Window (See App.xaml and App.xaml.cs to see how we get here). This Window
+                      allows us to authenticate users before they gain access to the MainWindow. It also provides us the info
+                      we need to dynamically load content based on login credentials.
+    -->
     <Grid>
         <!-- A Card to Hold the Login Form -->
         <materialDesign:Card Background="{StaticResource MaterialDesignPaper}" materialDesign:ShadowAssist.ShadowDepth="Depth4" Width="500" Height="650" Padding="20" UniformCornerRadius="50">

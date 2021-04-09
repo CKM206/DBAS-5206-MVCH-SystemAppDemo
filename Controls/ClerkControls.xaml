@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="DBAS_5206_MVCH_SystemAppDemo.Controls.ClerkControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="14"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+   <!-- Document: ClerkControls.xaml
+        Authors: Kristopher Hankey, 
+                 Andrew Kuo, 
+                 Calvin May, 
+                 Tom Zielinski
+        Date: 04/09/2021
+        Description: This is a custom control created for the MVCH System App Demo. This control is dynamically
+                     loaded onto the MainWindow.xaml, inside of the 'controlPanel' Grid, depending on the position 
+                     of the User currently logged into the application. This Control will only load if the logged 
+                     in user has a position of Clerk and will provide access to the functionality need by the Clerk 
+                     Positions.
+    --> 
+    
+    <Grid>
+        <!-- StackPanel for all Menu Elements -->
+        <StackPanel>
+            <!-- ListView to Hold the different Controls that are accessible from this Menu; the SelectionChanged Event will handle Content Loading -->
+            <ListView x:Name="lvMenuOptions" FontSize="20" Foreground="White" SelectionChanged="lvMenuOptions_SelectionChanged">
+
+                <!-- Home Option -->
+                <ListViewItem x:Name="lviHome" Padding="-30,1,1,1" FontSize="25" HorizontalContentAlignment="Stretch">
+                    <!-- StackPanel for the Items Icon & Text -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" Margin="15" />
+                        <TextBlock Text="Home" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+                <!-- Heading, even though this is a ListViewItem, it is disabled and acts as a heading for
+                     the ListViewItems beneath it
+                -->
+                <ListViewItem Focusable="False" IsEnabled="False">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline1TextBlock}" FontSize="25" >Reports</TextBlock>
+                </ListViewItem>
+
+                <!-- This Option brings up the PhysicianPatientReport Control-->
+                <ListViewItem x:Name="lviPhysicianPatientReport" Padding="1">
+                    <!-- StackPanel for the Items Icon & Text -->
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FileReport"  Margin="15" />
+                        <TextBlock Text="Physician-Patient Report" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+
+                <!-- This Option brings up the RoomUtilizationReport Control-->
+                <ListViewItem x:Name="lviRoomUtilizationReport" Padding="1">
+                    <!-- StackPanel for the Items Icon & Text -->
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="BedOutline" Margin="15" />
+                        <TextBlock Text="Room Utilization Report" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+
+            </ListView>
+        </StackPanel>
+    </Grid>
+</UserControl>

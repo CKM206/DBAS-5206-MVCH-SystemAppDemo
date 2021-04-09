@@ -1,4 +1,23 @@
-﻿using System;
+﻿/**
+ *  Document: App.xaml.cs
+ *  Authors: Kristopher Hankey, 
+ *           Andrew Kuo, 
+ *           Calvin May, 
+ *           Tom Zielinski
+ *  Date: 04/09/2021
+ *  Description: This file, along with App.xaml is how we enforce authentication and handle Application shutdowns.
+                 Note that in App.xaml: Startup="Application_Startup" ShutdownMode="OnExplicitShutdown">.
+                 This allows us to enforce certain rules regarding MainWindow loading, and application shutdown.
+                 In Deployment, the Minimize, Maximize, and close options in the top right would be disabled. This would
+                 ensure that the application is always running. Also allows us to close windows without shutting down the App. 
+
+                 Also, the App does not startup with a particular Window,
+                 It startsup using the Application_Startup Method below. The Application_Startup method launches the
+                 Authentication window, and only allows the MainWindow to be loaded if the Authentication returns a Dialog
+                 result of true.
+ */
+// Imports
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -51,7 +70,7 @@ namespace DBAS_5206_MVCH_SystemAppDemo
             finally
             {
                 // Once everything has been closed, shutdown the App
-                Shutdown();
+                Shutdown(); // This is our Explicit shutdown 
             }
         }
     }

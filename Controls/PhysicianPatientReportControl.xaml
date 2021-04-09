@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DBAS_5206_MVCH_SystemAppDemo.Controls"
              xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
-             xmlns:fluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              FontFamily="{materialDesign:MaterialDesignFont}"
              TextElement.Foreground="{StaticResource MaterialDesignBody}"
@@ -14,7 +13,20 @@
              Background="{StaticResource MaterialDesignPaper}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+
+    <!-- Document: PhysicianPatientReportControl.xaml
+         Authors: Kristopher Hankey, 
+                  Andrew Kuo, 
+                  Calvin May, 
+                  Tom Zielinski
+         Date: 04/09/2021
+         Description: This is a custom control created for the MVCH System App Demo. This control is dynamically
+                      loaded onto the MainWindow.xaml, inside of the 'contentPanel' ContentPanel. This Control is
+                      loaded when the it is selected in the ListView Control that is loaded in th MainWindow.
+    -->
+    
     <Grid>
+        <!-- A CrystalReportViewer Object that will hold the PhysicianPatientReport.rpt -->
         <Viewer:CrystalReportsViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="crystalReportsViewer1" />
 
     </Grid>
